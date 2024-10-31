@@ -15,6 +15,6 @@ public class ProductReaderImpl implements ProductReader {
     @Override
     public ProductEntity getProductByProductId(Long productId) {
         return productRepository.findById(productId)
-            .orElseThrow(() -> new Exception(ErrorCode.NOT));
+            .orElseThrow(() -> new BaseException(ProductErrorCode.NOT_FOUND_PRODUCT));
     }
 }
